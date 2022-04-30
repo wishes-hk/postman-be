@@ -1,1 +1,17 @@
-
+spring:
+  mail:
+    # email send via google smtp server
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      "[mail.transport.protocol]": smtp
+      "[mail.smtp.auth]": true
+      "[mail.smtp.starttls.enable]": true
+      # default timeout values are infinite, change to 60000 ms to avoid thread blocking by an unresponsive mail server
+      "[mail.smtp.connectiontimeout]": 60000
+      "[mail.smtp.timeout]": 60000
+      "[mail.smtp.writetimeout]": 60000
+  profiles:
+    active: ${ACTIVE_PROFILE}
