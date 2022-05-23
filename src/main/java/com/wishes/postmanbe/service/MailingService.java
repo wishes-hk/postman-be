@@ -55,6 +55,10 @@ public class MailingService {
             return null;
         }
 
+        if(contentParams == null) {
+            return content;
+        }
+
         for(Map.Entry<String, String> entry : contentParams.entrySet()) {
             String key = "\\$\\{" + entry.getKey() + "}";
             content = content.replaceAll(key, entry.getValue());
