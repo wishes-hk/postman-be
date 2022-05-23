@@ -5,10 +5,6 @@ on:
     branches: 
       - prod
       - dev
-  pull_request:
-    branches:    
-      - prod
-      - dev
 
 jobs:
   build-push:
